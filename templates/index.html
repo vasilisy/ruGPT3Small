@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ruGPT-3 Web App</title>
+</head>
+<body>
+    <h1>ruGPT-3 Web App</h1>
+    <form action="/generate" method="post">
+        <label for="user_input">Введите ваш запрос:</label>
+        <input type="text" id="user_input" name="user_input" required>
+        <button type="submit">Сгенерировать</button>
+    </form>
+    {% if user_input %}
+        <h2>Ваш запрос:</h2>
+        <p>{{ user_input }}</p>
+    {% endif %}
+    {% if generated_text %}
+        <h2>Ответ модели:</h2>
+        <p>{{ generated_text }}</p>
+    {% endif %}
+</body>
+</html>
